@@ -4,7 +4,7 @@ if [ -z "$1" ]; then
   exit 1
 fi
 # Шифрование скрипта
-code_hex=$(sed -e ':a' -e 'N' -e '$!ba' -e 's/\n/;/g' -e 's/\(do\|then\|else\|fi\|done\)\( *\)$/\1\n/g' -e 's/;;/;/g' -e 's/;/; /g' -e 's/done;/done/g' -e 's/do;/do/g' < "$1" | xxd -p)
+code_hex=$(sed -e ':a' -e 'N' -e '$!ba' -e 's/\n/;/g' -e 's/\(do\|then\|else\|fi\|done\|function\|select\|time\|until\|while\|in\)\( *\)[;]*$/\1\n/g' -e 's/;;/;/g' -e 's/;/; /g' -e 's/do;/do/g' -e 's/then;/then/g' -e 's/else;/else/g' -e 's/function;/function/g' -e 's/select;/select/g' -e 's/time;/time/g' -e 's/until;/until/g' -e 's/while;/while/g' < "$1" | xxd -p)
 # Создание нового .sh файла и запись зашифрованной строки в переменную code_hex
 new_file="$1.enc.sh"
 cat <<EOF >"$new_file"
