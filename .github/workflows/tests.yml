@@ -4,26 +4,25 @@ on:
     branches: [ "main" ]
   pull_request:
     branches: [ "main" ]
-
   workflow_dispatch:
-
 jobs:
   build:
     runs-on: ubuntu-latest
-
     steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
       - name: Test №1
         run: |
-          chmod +x /script.sh
-          /script.sh ./file1.sh
-          /file1.sh.enc.sh
+          chmod +x script.sh
+          ./script.sh file1.sh
+          ./file1.sh.enc.sh
       - name: Test №2
         run: |
           chmod +x script.sh
-          /script.sh ./file2.sh
-          /file2.sh.enc.sh
+          ./script.sh file2.sh
+          ./file2.sh.enc.sh
       - name: Test №3
         run: |
           chmod +x script.sh
-          /script.sh /file3.sh
-          /file3.sh.enc.sh
+          ./script.sh file3.sh
+          ./file3.sh.enc.sh
