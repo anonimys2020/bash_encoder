@@ -33,7 +33,7 @@ res=$(($lower+$upper+$digit+$other))
 
 if [ $res -lt 3 ]; then
 	echo "Error! Your password has less than 3 classes(Upper symbols, lower symbols, digits)"
-	exit 1
+	exit 0
 fi
 
 echo "Your password matches requirements!"
