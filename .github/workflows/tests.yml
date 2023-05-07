@@ -1,0 +1,26 @@
+name: Tests of script.sh
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Test №1
+        run: |
+          ./script.sh ./tests/file1.sh
+          ./tests/file1.sh.enc.sh
+      - name: Test №2
+        run: |
+          ./script.sh ./tests/file2.sh
+          ./tests/file2.sh.enc.sh
+      - name: Test №3
+        run: |
+          ./script.sh ./tests/file3.sh
+          ./tests/file3.sh.enc.sh
