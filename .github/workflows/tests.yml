@@ -14,7 +14,7 @@ jobs:
       - name: Test №1
         run: |
           chmod +x script.sh
-          echo "Password1234" | ./script.sh file1.sh
+          echo "Pass1234" | ./script.sh file1.sh
           ./file1.sh.enc.sh
       - name: Test №2
         run: |
