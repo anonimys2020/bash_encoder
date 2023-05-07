@@ -14,13 +14,13 @@ jobs:
     steps:
       - name: Test №1
         run: |
-          ./script.sh ./tests/file1.sh
-          ./tests/file1.sh.enc.sh
+          ./script.sh ./file1.sh
+          ./file1.sh.enc.sh
       - name: Test №2
         run: |
-          ./script.sh ./tests/file2.sh
-          ./tests/file2.sh.enc.sh
+          ./script.sh ./file2.sh
+          ./file2.sh.enc.sh
       - name: Test №3
         run: |
-          ./script.sh ./tests/file3.sh
-          ./tests/file3.sh.enc.sh
+          ./script.sh ./file3.sh
+          ./file3.sh.enc.sh
