@@ -14,15 +14,15 @@ jobs:
       - name: Test №1
         run: |
           chmod +x script.sh
-          ./script.sh file1.sh
-          echo "Pass1234" | ./file1.sh.enc.sh
+          ./script.sh ./tests/file1.sh
+          echo "Pass1234" | ./tests/file1.sh.enc.sh
       - name: Test №2
         run: |
           chmod +x script.sh
-          ./script.sh file2.sh
-          ./file2.sh.enc.sh
+          ./script.sh ./tests/file2.sh
+          ./tests/file2.sh.enc.sh
       - name: Test №3
         run: |
           chmod +x script.sh
-          ./script.sh file3.sh
-          echo "3" | ./file3.sh.enc.sh
+          ./script.sh ./tests/file3.sh
+          echo "3" | ./tests/file3.sh.enc.sh
