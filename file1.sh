@@ -3,12 +3,12 @@ read -s password
 
 if [ ${#password} -lt 8 ] || [ ${#password} -gt 14 ]; then
 	echo "Error! Your password has less than 8 symbols or more than 14."
-	exit 1
+	exit 0
 fi
 
 if [[ "$password" =~ [^[:ascii:]] ]]; then
 	echo "Error! Your password must consist of only ASCII symbols(33-126)"
-	exit 1
+	exit 0
 fi
 
 lower=0
